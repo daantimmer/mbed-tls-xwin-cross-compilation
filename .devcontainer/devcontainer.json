@@ -1,0 +1,35 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.231.6/containers/cpp
+{
+	"name": "C++",
+	"image": "ghcr.io/philips-software/amp-devcontainer@sha256:66e7e5736c540848287cf15fb323752ed8263e67d33edf88ddfd813d74ac8750", //v3.0.0
+	"runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined"
+	],
+	// Add the IDs of extensions you want installed when the container is created.
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"akiramiyakoda.cppincludeguard",
+				"eamodio.gitlens",
+				"GitHub.vscode-pull-request-github",
+				"IBM.output-colorizer",
+				"jeff-hykin.better-cpp-syntax",
+				"marus25.cortex-debug",
+				"matepek.vscode-catch2-test-adapter",
+				"mhutchie.git-graph",
+				"ms-vscode.cmake-tools",
+				"ms-vscode.cpptools-extension-pack",
+				"twxs.cmake",
+				"webfreak.debug",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"jebbs.plantuml",
+				"mcu-debug.debug-tracker-vscode",
+				"SonarSource.sonarlint-vscode"
+			]
+		}
+	}
+}
