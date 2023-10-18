@@ -13,11 +13,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 
 option(CMAKE_COMPILE_WARNING_AS_ERROR "Enable warnings-as-error" Off)
 
+include(FetchContent)
+FetchContent_Declare(
+    mbedtls
+    GIT_REPOSITORY https://github.com/Mbed-TLS/mbedtls
+    GIT_TAG 869298bffeea13b205343361b7a7daf2b210e33d # v3.2.1
+)
+
+set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL On)
+
 set(DISABLE_PACKAGE_CONFIG_AND_INSTALL On CACHE INTERNAL "")
 set(ENABLE_TESTING Off CACHE INTERNAL "")
 set(ENABLE_PROGRAMS Off CACHE INTERNAL "")
 set(GEN_FILES Off CACHE INTERNAL "")
 
-add_subdirectory(mbedtls)
+FetchContent_MakeAvailable(mbedtls)
 
 add_executable(example main.cpp)
