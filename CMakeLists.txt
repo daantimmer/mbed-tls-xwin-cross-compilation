@@ -16,8 +16,8 @@ option(CMAKE_COMPILE_WARNING_AS_ERROR "Enable warnings-as-error" Off)
 include(FetchContent)
 FetchContent_Declare(
     mbedtls
-    GIT_REPOSITORY https://github.com/Mbed-TLS/mbedtls
-    GIT_TAG 1ec69067fa1351427f904362c1221b31538c8b57 # v3.5.0
+    GIT_REPOSITORY https://github.com/daantimmer/mbedtls.git
+    GIT_TAG 3766a3225bc7303778416dde11acadc23b67a9aa # patch-1
 )
 
 set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL On)
@@ -25,7 +25,6 @@ set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL On)
 set(DISABLE_PACKAGE_CONFIG_AND_INSTALL On CACHE INTERNAL "")
 set(ENABLE_TESTING Off CACHE INTERNAL "")
 set(ENABLE_PROGRAMS Off CACHE INTERNAL "")
-set(GEN_FILES Off CACHE INTERNAL "")
 
 FetchContent_MakeAvailable(mbedtls)
 

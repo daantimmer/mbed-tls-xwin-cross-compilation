@@ -26,4 +26,5 @@ jobs:
         run: |
           ./run-xwin.sh
           cmake --preset=xwin
+          python3 -m pip install --user -r .build/xwin/_deps/mbedtls-src/scripts/basic.requirements.txt
           cmake --build --preset=xwin-Release
