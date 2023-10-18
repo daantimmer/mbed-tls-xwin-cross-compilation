@@ -1,0 +1,23 @@
+cmake_minimum_required (VERSION 3.24)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_SYSTEM_PREFIX_PATH "${CMAKE_INSTALL_PREFIX}")
+
+project(example.project LANGUAGES C CXX ASM VERSION 1.1.0) # x-release-please-version
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED On)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
+
+option(CMAKE_COMPILE_WARNING_AS_ERROR "Enable warnings-as-error" Off)
+
+set(DISABLE_PACKAGE_CONFIG_AND_INSTALL On CACHE INTERNAL "")
+set(ENABLE_TESTING Off CACHE INTERNAL "")
+set(ENABLE_PROGRAMS Off CACHE INTERNAL "")
+set(GEN_FILES Off CACHE INTERNAL "")
+
+add_subdirectory(mbedtls)
+
+add_executable(example main.cpp)

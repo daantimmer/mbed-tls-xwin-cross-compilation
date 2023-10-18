@@ -12,24 +12,7 @@
 	"customizations": {
 		"vscode": {
 			"settings": {},
-			"extensions": [
-				"akiramiyakoda.cppincludeguard",
-				"eamodio.gitlens",
-				"GitHub.vscode-pull-request-github",
-				"IBM.output-colorizer",
-				"jeff-hykin.better-cpp-syntax",
-				"marus25.cortex-debug",
-				"matepek.vscode-catch2-test-adapter",
-				"mhutchie.git-graph",
-				"ms-vscode.cmake-tools",
-				"ms-vscode.cpptools-extension-pack",
-				"twxs.cmake",
-				"webfreak.debug",
-				"llvm-vs-code-extensions.vscode-clangd",
-				"jebbs.plantuml",
-				"mcu-debug.debug-tracker-vscode",
-				"SonarSource.sonarlint-vscode"
-			]
+			"extensions": []
 		}
 	}
 }

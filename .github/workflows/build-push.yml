@@ -1,0 +1,29 @@
+---
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/philips-software/amp-devcontainer@sha256:66e7e5736c540848287cf15fb323752ed8263e67d33edf88ddfd813d74ac8750 #v3.0.0
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 #v4.1.0
+        with:
+          submodules: true
+      - name: Build Host
+        run: |
+          ./run-xwin.sh
+          cmake --preset=xwin
+          cmake --build --preset=xwin-Release

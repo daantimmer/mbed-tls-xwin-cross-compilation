@@ -1,0 +1,45 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "xwin",
+            "binaryDir": "${sourceDir}/.build/${presetName}",
+            "installDir": "${sourceDir}/.install",
+            "generator": "Ninja Multi-Config",
+            "toolchainFile": "${sourceDir}/toolchain-clang-x86_64-pc-windows-msvc.cmake",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "On",
+                "CMAKE_C_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "xwin-Debug",
+            "configuration": "Debug",
+            "configurePreset": "xwin"
+        },
+        {
+            "name": "xwin-Release",
+            "configuration": "Release",
+            "configurePreset": "xwin"
+        },
+        {
+            "name": "xwin-RelWithDebInfo",
+            "configuration": "RelWithDebInfo",
+            "configurePreset": "xwin"
+        },
+        {
+            "name": "xwin-MinSizeRel",
+            "configuration": "MinSizeRel",
+            "configurePreset": "xwin"
+        }
+    ],
+    "testPresets": []
+}
