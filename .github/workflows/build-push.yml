@@ -26,4 +26,4 @@ jobs:
         run: |
           ./run-xwin.sh
           cmake --preset=xwin
-          cmake --build --preset=xwin-Release
+          cmake --build --preset=xwin-Debug
